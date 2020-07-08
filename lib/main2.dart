@@ -3,6 +3,7 @@ import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'piepic.dart';
+import 'inputdt.dart';
 
 void main() {
   runApp(new MaterialApp(home: new MyApp(),));
@@ -34,6 +35,10 @@ class _MyAppState extends State<MyApp> {
                     child: Text('chart2'),
                     onPressed: _gotoc2,
                   ),
+                  RaisedButton(
+                    child: Text('input'),
+                    onPressed: _gotoc3,
+                  ),
 
                 ],
             )
@@ -56,6 +61,14 @@ class _MyAppState extends State<MyApp> {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => app1),
+    );
+
+  }
+
+  _gotoc3(){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => inputv()),
     );
 
   }
