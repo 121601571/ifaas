@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           ButtonTheme(
             minWidth: 200.0,
@@ -74,7 +74,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           ButtonTheme(
             minWidth: 200.0,
@@ -90,7 +90,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
           SizedBox(
-            height: 100,
+            height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
