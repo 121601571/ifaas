@@ -25,7 +25,9 @@ class NumericComboLineBarChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return
         new Scaffold(
-          appBar: AppBar(),
+          appBar: AppBar(
+            title: Text('Margin Analysis'),
+          ),
           body: new charts.NumericComboChart(seriesList,
               animate: animate,
               // Configure the default renderer as a line renderer. This will be used
@@ -47,24 +49,30 @@ class NumericComboLineBarChart extends StatelessWidget {
   /// Create one series with sample hard coded data.
   static List<charts.Series<LinearSales, int>> _createSampleData() {
     final desktopSalesData = [
-      new LinearSales(0, 5),
-      new LinearSales(1, 25),
-      new LinearSales(2, 100),
-      new LinearSales(3, 75),
+      new LinearSales(0, 10),
+      new LinearSales(1, 50),
+      new LinearSales(2, 30),
+      new LinearSales(3, 80),
+      new LinearSales(4, 60),
+      new LinearSales(5, 90),
     ];
 
     final tableSalesData = [
-      new LinearSales(0, 5),
-      new LinearSales(1, 25),
-      new LinearSales(2, 100),
-      new LinearSales(3, 75),
+      new LinearSales(0, 30),
+      new LinearSales(1, 10),
+      new LinearSales(2, 60),
+      new LinearSales(3, 70),
+      new LinearSales(4, 20),
+      new LinearSales(5, 70),
     ];
 
     final mobileSalesData = [
       new LinearSales(0, 10),
-      new LinearSales(1, 50),
-      new LinearSales(2, 200),
-      new LinearSales(3, 150),
+      new LinearSales(1, 30),
+      new LinearSales(2, 70),
+      new LinearSales(3, 90),
+      new LinearSales(4, 30),
+      new LinearSales(5, 50),
     ];
 
     return [
@@ -86,12 +94,12 @@ class NumericComboLineBarChart extends StatelessWidget {
       )
         // Configure our custom bar renderer for this series.
         ..setAttribute(charts.rendererIdKey, 'customBar'),
-      new charts.Series<LinearSales, int>(
-          id: 'Mobile',
-          colorFn: (_, __) => charts.MaterialPalette.green.shadeDefault,
-          domainFn: (LinearSales sales, _) => sales.year,
-          measureFn: (LinearSales sales, _) => sales.sales,
-          data: mobileSalesData),
+//      new charts.Series<LinearSales, int>(
+//          id: 'Mobile',
+//          colorFn: (_, __) => charts.MaterialPalette.green.shadeDefault,
+//          domainFn: (LinearSales sales, _) => sales.year,
+//          measureFn: (LinearSales sales, _) => sales.sales,
+//          data: mobileSalesData),
     ];
   }
 }
