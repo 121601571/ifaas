@@ -47,10 +47,12 @@ class DonutAutoLabelChart extends StatelessWidget {
   /// Create one series with sample hard coded data.
   static List<charts.Series<LinearSales, int>> _createSampleData() {
     final data = [
-      new LinearSales(0, 100),
-      new LinearSales(1, 75),
-      new LinearSales(2, 25),
-      new LinearSales(3, 5),
+      new LinearSales(0, 30,'cake1'),
+      new LinearSales(1, 30,'cake2'),
+      new LinearSales(2, 40,'cake3'),
+      new LinearSales(3, 20,'cake4'),
+      new LinearSales(4, 40,'cake5'),
+      new LinearSales(5, 50,'cake6'),
     ];
 
     return [
@@ -60,7 +62,7 @@ class DonutAutoLabelChart extends StatelessWidget {
         measureFn: (LinearSales sales, _) => sales.sales,
         data: data,
         // Set a label accessor to control the text of the arc label.
-        labelAccessorFn: (LinearSales row, _) => '${row.year}: ${row.sales}',
+        labelAccessorFn: (LinearSales row, _) => '${row.name}: ${row.sales}',
       )
     ];
   }
@@ -70,6 +72,7 @@ class DonutAutoLabelChart extends StatelessWidget {
 class LinearSales {
   final int year;
   final int sales;
+  final String name;
 
-  LinearSales(this.year, this.sales);
+  LinearSales(this.year, this.sales, this.name);
 }
