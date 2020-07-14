@@ -7,7 +7,6 @@ import 'package:charts_flutter/flutter.dart';
 import 'package:charts_flutter/src/text_element.dart';
 import 'package:charts_flutter/src/text_style.dart' as style;
 
-
 var app1 = NumericComboLineBarChart.withSampleData();
 
 void main() => runApp(app1);
@@ -54,9 +53,9 @@ class NumericComboLineBarChart extends StatelessWidget {
         selectionModels: [
           SelectionModelConfig(changedListener: (SelectionModel model) {
             if (model.hasDatumSelection)
-              //print(model.selectedSeries[0].measureFn(model.selectedDatum[2].index));
-              //print(model.selectedDatum[2].datum.sales);
-
+            //print(model.selectedSeries[0].measureFn(model.selectedDatum[2].index));
+            //print(model.selectedDatum[2].datum.sales);
+            {
               Toast.show(
                   'Actual margin :' +
                       model.selectedDatum[2].datum.sales.toString(),
@@ -64,13 +63,18 @@ class NumericComboLineBarChart extends StatelessWidget {
                   duration: Toast.LENGTH_SHORT,
                   gravity: Toast.CENTER);
 
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => detail() ),
-            );
+              Future.delayed(const Duration(milliseconds: 500), () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => detail() ),
+                );
+
+              });
 
 
 
+
+            }
           })
         ],
       ),
