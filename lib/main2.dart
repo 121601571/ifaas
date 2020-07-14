@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'main.dart';
 import 'piepic.dart';
 import 'inputdt.dart';
+import 'chart3.dart';
 
 void main() {
   runApp(new MaterialApp(
     debugShowCheckedModeBanner: false,
     showSemanticsDebugger: false,
-
-    home: new MyApp( ),
+    home: new MyApp(),
   ));
 }
 
@@ -25,7 +25,6 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-
       appBar: AppBar(
         title: Text('iFaaS'),
       ),
@@ -35,14 +34,14 @@ class _MyAppState extends State<MyApp> {
         children: [
           // app1,
           SizedBox(
-            height: 50,
+            height: 30,
           ),
           Text(
             'iFaaS',
             style: TextStyle(color: Colors.blue, fontSize: 30),
           ),
           SizedBox(
-            height: 30,
+            height: 20,
           ),
           ButtonTheme(
             minWidth: 200.0,
@@ -143,7 +142,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   _gotoc2() {
-    var app1 = DonutAutoLabelChart.withSampleData();
+    //var app1 = DonutAutoLabelChart.withSampleData();
+    var app1 = StackedFillColorBarChart.withSampleData();
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => app1),
