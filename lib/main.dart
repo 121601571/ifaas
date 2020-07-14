@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 import 'package:toast/toast.dart';
-
+import 'pages/detail.dart';
 import 'package:charts_flutter/flutter.dart';
 import 'package:charts_flutter/src/text_element.dart';
 import 'package:charts_flutter/src/text_style.dart' as style;
+
 
 var app1 = NumericComboLineBarChart.withSampleData();
 
@@ -55,12 +56,21 @@ class NumericComboLineBarChart extends StatelessWidget {
             if (model.hasDatumSelection)
               //print(model.selectedSeries[0].measureFn(model.selectedDatum[2].index));
               //print(model.selectedDatum[2].datum.sales);
+
               Toast.show(
                   'Actual margin :' +
                       model.selectedDatum[2].datum.sales.toString(),
                   context,
                   duration: Toast.LENGTH_SHORT,
                   gravity: Toast.CENTER);
+
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => detail() ),
+            );
+
+
+
           })
         ],
       ),
